@@ -2,6 +2,7 @@ import requests
 import csv
 import os
 
+
 os.chdir('F:/')
 
 url = ('http://10.172.89.55/cimiss-web/api?userId=BEXA_XIAN_liuchang&pwd=liu7758521&interfaceId='
@@ -13,9 +14,13 @@ url = ('http://10.172.89.55/cimiss-web/api?userId=BEXA_XIAN_liuchang&pwd=liu7758
        + '&minSeparate=' + '5' + '&dataFormat=' + 'csv')
 
 data = requests.get(url)
+
+df = pd.DataFrame(data)
+print(df)
+
 #print(data.headers)
-with open("pyci2.csv", 'w',encoding='gbk') as f:
-    f.write(data.text)
+#with open("pyci2.csv", 'w',encoding='gbk') as f:
+#    f.write(data.text)
 
 #print(data.text)
 
